@@ -10,9 +10,9 @@ venv_dir="${VENV_DIR:-$MYSCRATCH/qiskit-aer-venv-${qiskit_ver}}"
 # Required to build qiskit-aer
 py_ver="3.11.6"
 pip_ver="23.1.2-py3.11.6"
-st_ver="68.0.0-py3.11.6"
+st_ver="69.2.0-py3.11.6"
 blas_ver="0.3.24"
-rocm_ver="5.7.1"
+rocm_ver="6.3.1"
 
 # Python modules to use instead of installing from pip
 numpy_ver="1.26.1"
