@@ -15,9 +15,9 @@ blas_ver="0.3.24"
 rocm_ver="6.3.1"
 
 # Python modules to use instead of installing from pip
-numpy_ver="1.26.1"
-scikit_ver="1.3.2"
-scipy_ver="1.11.3"
+numpy_ver="2.1.2"
+scikit_ver="1.4.2"
+scipy_ver="1.14.1"
 
 # Edits passed this point shouldn't be necesseary.
 # -------------------------------------------------------
