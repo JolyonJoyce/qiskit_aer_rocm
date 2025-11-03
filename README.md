@@ -15,7 +15,7 @@ cd $MYSCRATCH
 1. Clone:
 
 ```bash
-git clone https://github.com/PawseySC/qiskit_aer_rocm.git
+git clone https://github.com/JolyonJoyce/qiskit_aer_rocm.git
 cd  qiskit_aer_rocm
 ```
 2. Submit the build job:
