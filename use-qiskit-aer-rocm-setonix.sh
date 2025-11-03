@@ -35,6 +35,7 @@ module load "craype-accel-amd-gfx90a"
 module load "gcc"         # so that hipcc can find the gcc toolchain
 
 # Load python modules
+module load gcc-native/14.2 
 module load "py-numpy/$numpy_ver"
 module load "py-scikit-learn/$scikit_ver"
 module load "py-scipy/$scipy_ver"
