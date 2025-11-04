@@ -20,11 +20,13 @@ rm -rf "$script_dir/qiskit-aer-venv"
 
 . "$script_dir/use-qiskit-source-rocm-setonix.sh"
 
+# Verify that aer_ver is set
 if [ -z "$aer_ver" ]; then
     echo "Error: aer_ver is not set. Exiting."
     exit 1
 fi
 
+# Clone Qiskit-Aer at the requested tag/branch
 git clone https://github.com/Qiskit/qiskit-aer "$source_dir/qiskit-aer"
 cd "$source_dir/qiskit-aer"
 
@@ -34,9 +36,11 @@ git checkout "$aer_ver"
 python -m pip install -r requirements-dev.txt
 python -m pip install pybind11
 
+# Locate gcc toolchain for hipcc
 gcc_path="$(realpath "$(which gcc)")"
 toolchain_path="$(dirname "$(dirname "$gcc_path")")"
 
+# Build a ROCm‐compatible wheel
 python setup.py bdist_wheel -- \
   -DCMAKE_CXX_COMPILER=hipcc \
   -DCMAKE_CXX_FLAGS="--gcc-toolchain=$toolchain_path" \
@@ -47,10 +51,13 @@ python setup.py bdist_wheel -- \
   -DAER_DISABLE_GDR=True \
   --
 
+# Install the newly built wheel
 python -m pip install dist/qiskit_aer*.whl
 
 python -m pip install networkx
 
-cd $script_dir/../maxcut
-python -m pip install .
+# cd $script_dir/../maxcut
+# python -m pip install .
+
+# Return to the original script directory
 cd $script_dir
