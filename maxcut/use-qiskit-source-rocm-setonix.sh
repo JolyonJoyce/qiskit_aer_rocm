@@ -10,9 +10,14 @@ export aer_ver="4a5e830d0153b535cae55b1b3444d170865e1fd3"
 # Versions of modules
 py_ver="3.11.6"
 pip_ver="23.1.2-py3.11.6"
-st_ver="68.0.0-py3.11.6"
+st_ver="69.2.0-py3.11.6"
 blas_ver="0.3.24"
-rocm_ver="5.7.1"
+rocm_ver="6.3.1"
+
+# Python modules to use instead of installing from pip
+numpy_ver="2.1.2"
+scikit_ver="1.4.2"
+scipy_ver="1.14.1"
 
 # Load modules
 module load python/$py_ver
@@ -22,6 +27,12 @@ module load openblas/$blas_ver
 module load rocm/$rocm_ver
 module load craype-accel-amd-gfx90a
 module load gcc
+
+# Load python modules
+module load gcc-native/14.2 
+module load "py-numpy/$numpy_ver"
+module load "py-scikit-learn/$scikit_ver"
+module load "py-scipy/$scipy_ver"
 
 # Create a venv if it doesn't exist
 if [ ! -d "$script_dir/qiskit-aer-venv" ]; then
