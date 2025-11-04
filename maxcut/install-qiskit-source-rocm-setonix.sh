@@ -54,8 +54,8 @@ python setup.py bdist_wheel -- \
 # Install the newly built wheel
 python -m pip install dist/qiskit_aer*.whl
 
+# Install remaining python packages for maxcut
 python -m pip install networkx
-
 # cd $script_dir/../maxcut
 # python -m pip install .
 
