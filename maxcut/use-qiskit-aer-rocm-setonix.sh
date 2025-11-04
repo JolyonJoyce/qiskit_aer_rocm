@@ -5,20 +5,20 @@
 # Build Configuration: change these parameters as needed.
 
 export qiskit_ver="2.0.2"
-export aer_ver="0.16.1"
+export aer_ver="0.17"
 venv_dir="$MYSCRATCH/qiskit-aer-venv"
 
 # Required to build qiskit-aer
 py_ver="3.11.6"
 pip_ver="23.1.2-py3.11.6"
-st_ver="68.0.0-py3.11.6"
+st_ver="69.2.0-py3.11.6"
 blas_ver="0.3.24"
-rocm_ver="5.7.1"
+rocm_ver="6.3.1"
 
 # Python modules to use instead of installing from pip
-numpy_ver="1.26.1"
-scikit_ver="1.3.2"
-scipy_ver="1.11.3"
+numpy_ver="2.1.2"
+scikit_ver="1.4.2"
+scipy_ver="1.14.1"
 
 # Edits passed this point shouldn't be necesseary.
 # -------------------------------------------------------
@@ -36,6 +36,7 @@ module load "craype-accel-amd-gfx90a"
 module load "gcc"         # so that hipcc can find the gcc toolchain
 
 # Load python modules
+module load gcc-native/14.2 
 module load "py-numpy/$numpy_ver"
 module load "py-scikit-learn/$scikit_ver"
 module load "py-scipy/$scipy_ver"
