@@ -24,7 +24,7 @@ cd  qiskit_aer_rocm
 
 ```bash
 salloc -N 1 --gpus=1 -p gpu-dev --account=${PAWSEY_PROJECT}-gpu \
-bash install-qiskit-source-rocm-setonix.sh
+bash use-qiskit-aer-rocm-setonix.sh
 ```
 
 What the job does:
