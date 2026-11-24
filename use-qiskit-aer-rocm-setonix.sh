@@ -13,7 +13,7 @@ py_ver="3.11.6"
 pip_ver="23.1.2-py3.11.6"
 st_ver="69.2.0-py3.11.6"
 blas_ver="0.3.24"
-rocm_ver="6.3.1"
+rocm_ver="6.3.0"
 
 # Python modules to use instead of installing from pip
 numpy_ver="2.1.2"
